@@ -9,7 +9,7 @@ import {
     setStorageValue
 } from "../../VKBridge";
 import VKBridge from "@vkontakte/vk-bridge";
-import { notion } from "../../utils/notionConfig";
+import { notion, patchUserPage } from "../../utils/notionConfig";
 
 function toIsoString(date: Date) {
     var tzo = -date.getTimezoneOffset(),
@@ -87,8 +87,7 @@ export class AppStore {
             });
             setStorageValue("user-page", response.id);
         } else {
-            await notion.pages.update({
-                page_id: user_page_id,
+            patchUserPage(user_page_id, {
                 properties: {
                     "Последнее посещение": {
                         date: {
