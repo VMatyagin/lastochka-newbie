@@ -79,3 +79,18 @@ export const sendTapticImpact = async (style: TapticVibrationPowerType) => {
         return error;
     }
 };
+
+export const setStorageValue = (key: string, value: string) => {
+    return VKBridge.send("VKWebAppStorageSet", {
+        key,
+        value
+    });
+};
+
+export const getStorageValue = (key: string) => {
+    return VKBridge.send("VKWebAppStorageGet", { keys: [key] }).then(
+        ({ keys }) => {
+            return keys && keys[0] && keys[0].value;
+        }
+    );
+};

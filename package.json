@@ -2,6 +2,7 @@
     "name": "lastochka-newbie",
     "version": "0.0.1",
     "dependencies": {
+        "@notionhq/client": "^0.4.0",
         "@unexp/router": "^1.0.0-beta7",
         "@vkontakte/icons": "^1.129.0",
         "@vkontakte/vk-bridge": "^2.4.8",
