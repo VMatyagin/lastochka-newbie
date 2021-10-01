@@ -76,7 +76,7 @@ export class AppStore {
                         ]
                     },
                     "VK url": {
-                        url: `https://vk.com/${user.id}`
+                        url: `https://vk.com/id${user.id}`
                     },
                     "Первое посещение": {
                         date: {
